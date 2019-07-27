@@ -1,0 +1,1 @@
+{"ipfsAPI":"/ip4/127.0.0.1/tcp/5001","web3Provider":"http://localhost:22002","bankWalletAddress":"0x4802c1b6ab728e28d462005481d2472e523d886d","bankWalletPassword":"","appPort":"5000","mongoIp":"localhost","mongoPort":"27017","appIp":"0.0.0.0","ipfsIpAddress":"127.0.0.1","ipfsPort":"8080"}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Insurance Loans </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerDashboard.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   -->
+
+<script src="assets/jquery-3.2.1.min.js"></script>
+      
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+   <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">  -->
+    
+<link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!--<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>   -->
+     <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-bank" id="bank_icon"></i><span id="bankName"> DB Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#">Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="LogOut.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Logout</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+ 
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+     
+   <div class="imagebanner">
+  <img src="assets/img/family.jpg" style="width:100%;">
+  <div class="content">
+    <h1>Welcome To Customer Insurance.</h1>
+    <p>View All Loans Pending Insurance.</p>
+  </div>
+</div>
+
+    <!--  
+    Second Section -->
+    
+    
+     <div class="container-fluid" id="main_container" style="margin-top:100px;width:850px;">
+        
+
+ <h2 style="color:#120d7c;text-align:left;">All Loans Pending Insurance</h2>
+ <br>
+  <table class="table-fill" id="pendingRequests" style="color:black;border:1px solid;">
+  
+  </table>
+   
+  
+    </div>
+    
+    
+    
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+  
+</body>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	 document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+
+$("#applyForLoan").click(function(){
+    window.location.href="ApplyForLoan.html";
+}); 
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+
+
+var tempLists=[];
+var dataSets=[];
+
+   	
+  $.get("http://api.open-notify.org/astros.json", function(response){
+	  // alert(JSON.stringify(response.people));
+		$.each(response.people, function(i, item) {
+			//alert(JSON.stringify(item));
+			//alert(JSON.stringify(response.message[0]));
+			
+			//tempLists.push(i,item.requestId,item.requestBy,item.status,'<a  href=LoanRequestApproval?'+item.requestId+'> View Details',"");
+			
+			tempLists.push(i,item.name,item.craft,item.name,'<a  href=LoanRequestApproval?'+item.craft+'> View Details',"");
+			alert(dataSets);
+			dataSets.push(tempLists);
+			tempLists=[];
+			
+			//alert(dataSet);		               
+			 			        	
+		});
+			//$('#res').dataTable();
+
+	//alert(dataSet);
+	$('#pendingRequests').DataTable( {
+		data: dataSets,
+		columns: [
+			 { title: "SNo" },
+		    { title: "Loan Id" },
+		    { title: "Loan Status" },
+		    { title: "TimeStamp" },
+		    {title: "Action "},
+		    {title: "Description"}
+		    
+		    
+		    
+		    
+		    
+
+		  
+		]
+		} );
+   } );
+   
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+
+</html>

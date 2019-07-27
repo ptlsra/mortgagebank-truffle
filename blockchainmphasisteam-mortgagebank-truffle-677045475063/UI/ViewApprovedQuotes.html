@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Approved Quote </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerDashboard.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+      <script src="assets/jquery-3.2.1.min.js"></script>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+<!--   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>  -->
+   <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-bank" id="bank_icon"></i><span id="bankName"> DB Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#">Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="LogOut.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Logout</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+ 
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+     
+   <div class="imagebanner">
+  <img src="assets/img/family.jpg" style="width:100%;">
+  <div class="content">
+    <h1 id="CustomerIntroTitle">Welcome To Customer Dashboard.</h1>
+    <p id="ll">View Quotes For LoanID</p>
+  </div>
+</div>
+
+    <!--  
+    Second Section -->
+    
+    
+    
+              <button class="buttonLink" onclick="goBack()" style="margin-left:890px;margin-top:40px;">Go Back</button>
+      
+     <div class="container-fluid" id="main_container" style="margin-top:10px;width:850px;">
+        
+
+ <h2 style="color:#120d7c;text-align:left;">Quotes For Customer</h2>
+ <br>
+  <table class="table-fill" id="pendingRequest6" style="color:black;border:1px solid;">
+  
+  </table>
+   
+  
+    </div>
+    
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+  
+</body>
+     <script src="assets/js/Properties.js"></script>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#infoTable").hide();
+	 $("#loanData").hide();
+	 $("#ownerAddress").hide();
+	 $("#username").hide();
+	 $("#password").hide();
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	 document.getElementById("bankName").innerHTML = "ABC Bank";
+
+	 
+	 
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+
+
+
+
+$("#applyForLoan").click(function(){
+    window.location.href="ApplyForLoan.html";
+}); 
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+var walletAddress=localStorage.getItem("walletAddress");
+
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var loanId = getUrlParameter('loanId');
+var name = getUrlParameter('name');
+
+var replaced = name.split('_').join(' ');
+
+document.getElementById("CustomerIntroTitle").innerHTML ="Welcome To Customer Dashboard,"+ replaced;
+
+
+document.getElementById("ll").innerHTML ="View  Quotes For Loan ID: "+ loanId;
+var arrayOfAddress=new Array();
+var arrayOfPolicy=new Array();
+var tempLists=[];
+var dataSets=[];
+/*
+var ipAddress= localStorage.getItem("ipAddress");
+var port= localStorage.getItem("port");
+var port2= localStorage.getItem("port2");
+*/
+$.get("/getInsuranceCompanies", function(response2){
+
+	
+	// alert(JSON.stringify(response2[0]));
+	
+	var insCompany1=response2[0].accountAddress;
+	var insCompany2=response2[1].accountAddress;
+	
+	//var flagArray=new Array();
+	var flagArray=new Array();
+	var flagArray2=new Array();
+	
+	
+//	http://172.21.80.81:5000/getQuoteStatus?loanId=11201365
+	$.get("/getQuoteStatus?loanId="+loanId, function(response3){
+    	// alert(JSON.stringify(response3));
+ 	
+ 				
+ 				
+ 				
+ 				
+ 				if(response3.status=='approved'){
+ 					if(response3.approvedBy==insCompany1){
+ 	 					
+ 						
+ 						 $.ajax({
+ 		    				 
+ 	    				 	dataType: "json",
+ 	    		            url: "/getQuote?loanId="+loanId+"&insuranceAddress="+insCompany1,
+ 	    		            global: false,
+ 	    		            type: 'GET',
+ 	    		            async: false, //blocks window close
+ 	    		            success: function(data) {
+ 	    		            //	alert(data.quoteObject.quote);
+ 	    		            
+ 	    		            	var n = data.quoteObject.quote.length; 
+ 						var substr=data.quoteObject.quote.substr(19, n); 
+ 						substr = substr.split('%').join('_');
+ 	    		            	tempLists.push(loanId,'Policy Issued','Chain insurance','<a  href=ApproveQuoteByCustomer2.html?loanId='+loanId+'&policyId='+loanId+'&insuranceAddress='+insCompany1+'&quote='+substr+'> View Details');
+
+ 	    	 					dataSets.push(tempLists);
+ 	    	 					tempLists=[];
+ 	 				
+ 					
+ 					
+ 				}
+ 						 
+ 						 });
+ 					}
+ 					if(response3.approvedBy==insCompany2){
+ 	 					
+ 	 	 				
+ 						
+ 						 $.ajax({
+ 		    				 
+  	    				 	dataType: "json",
+  	    		            url: "/getQuote?loanId="+loanId+"&insuranceAddress="+insCompany2,
+  	    		            global: false,
+  	    		            type: 'GET',
+  	    		            async: false, //blocks window close
+  	    		            success: function(data) {
+  	    		            	//alert(data.quoteObject.quote);
+  	    		            	
+  	    		            	var n = data.quoteObject.quote.length; 
+ 						var substrs=data.quoteObject.quote.substr(19, n); 
+ 						substrs = substrs.split('%').join('_');
+  	    		          	tempLists.push(loanId,'Policy Issued','Block insurance','<a  href=ApproveQuoteByCustomer2.html?loanId='+loanId+'&policyId='+loanId+'&insuranceAddress='+insCompany2+'&quote='+substrs+'> View Details');
+
+  	 	 					dataSets.push(tempLists);
+  	 	 					tempLists=[];
+  					
+  					
+  				}
+  						 
+  						 });
+  					}
+ 						
+ 	 				
+ 	 					
+ 	 				
+ 				}
+ 				
+ 			
+	
+	
+ 			$('#pendingRequest6').DataTable( {
+ 				data: dataSets,
+ 				columns: [
+ 					 { title: "Loan ID" },
+ 				    { title: "Status Of Loan" },
+ 			//	    { title: " Request ID " },
+ 				   { title: " From " },
+ 				    {title: "Details  "}
+ 				    
+ 				    
+ 				    
+ 				    
+
+ 				  
+ 				]
+ 	    		} );
+
+	
+	
+	});
+});
+
+});
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>

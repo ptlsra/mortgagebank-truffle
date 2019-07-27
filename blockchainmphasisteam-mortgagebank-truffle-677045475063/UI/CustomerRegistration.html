@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerReg.css">
+    <link rel="stylesheet" href="assets4/css/form-elements.css">
+        <link rel="stylesheet" href="assets4/css/style.css">
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   -->
+
+<script src="assets/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-bank" id="bank_icon"></i><span id="bankName"> DB Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#">Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="LogOut.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Logout</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+ 
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+     
+    
+    <!--  
+    Banner -->
+    
+    
+   <div class="imagebanner">
+  <img src="assets/img/imgbanner.jpg" alt="Notebook" style="width:100%;">
+  <div class="content">
+    <h1>Register As Customer</h1>
+    <p>Provide details and get started.</p>
+  </div>
+</div>
+
+
+
+
+
+     <div class="top-content">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                      
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+                    	<form role="form" action="" method="post" class="f1" id="registerCustomerform">
+
+                    		<h3>Register As Customer</h3>
+                    		<p></p>
+                    		<div class="f1-steps">
+                    			<div class="f1-progress">
+                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    			</div>
+                    			<div class="f1-step active">
+                    				<div class="f1-step-icon"><i class="fa fa-user" style="margin-left:13px;"></i></div>
+                    				<p>About</p>
+                    			</div>
+                    			<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-key" style="margin-left:13px;"></i></div>
+                    				<p>account</p>
+                    			</div>
+                    		    <div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-map" style="margin-left:13px;"></i></div>
+                    				<p>Location</p>
+                    			</div>
+
+<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-check" style="margin-left:13px;"></i></div>
+                    				<p>Details</p>
+                    			</div>
+                    		</div>
+                    		
+                    		<fieldset>
+                    		    <h4>Tell us who you are:</h4>
+                    		    <br>
+                    			<div class="form-group">
+                    			    <label class="sr-only" for="f1-first-name">First name</label>
+                                    <input type="text" name="f1-first-name" placeholder="First name..." class="f1-first-name form-control" id="f1-first-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-last-name">Last name</label>
+                                    <input type="text" name="f1-last-name" placeholder="Last name..." class="f1-last-name form-control" id="f1-last-name">
+                                </div>
+                                
+                                
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-phoneNo">Phone Number</label>
+                                    <label  id="wrongNo" style="color:red;">Entered Number is Invalid* </label>
+                                    <input type="text" name="f1-phoneNo" placeholder="Phone Number" class="f1-phoneNo form-control" id="f1-phoneNo">
+                                </div>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" id="next1" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <h4>Set up your account:</h4>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-email">Email</label>
+                                    <input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">Password</label>
+                                    <input type="password" name="f1-password" placeholder="Password..." class="f1-password form-control" id="f1-password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-repeat-password">Repeat password</label>
+                                           <label  id="wrongPass" style="color:red;">Password's Do Not Match* </label>
+                                    
+                                    <input type="password" name="f1-repeat-password" placeholder="Repeat password..." 
+                                                        class="f1-repeat-password form-control" id="f1-repeat-password">
+                                </div>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next" id="next2">Next</button>
+                                </div>
+                            </fieldset>
+
+
+
+
+ <fieldset>
+                                <h4>Address Details:</h4>
+                                <br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-key">Address</label>
+                                    <input type="text" name="f1-address" placeholder="Address" class="f1-address form-control" id="f1-address" required>
+                       <br>     
+                       
+    <select name="state" id="state" style="color:black;background: transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;cursor:pointer;">
+  <option value="" selected="selected">Select a State</option>
+  <option value="Alabama">Alabama</option>
+  <option value="Alaska">Alaska</option>
+  <option value="Arizona">Arizona</option>
+  <option value="Arkansas">Arkansas</option>
+  <option value="California">California</option>
+  <option value="Colorado">Colorado</option>
+  <option value="Connecticut">Connecticut</option>
+  
+  <option value="Delaware">Delaware</option>
+  
+  <option value="District-Of-Columbia">District Of Columbia</option>
+  <option value="Florida">Florida</option>
+  <option value="Georgia">Georgia</option>
+  <option value="Hawaii">Hawaii</option>
+  <option value="Idaho">Idaho</option>
+  <option value="Illinois">Illinois</option>
+  
+  <option value="Indiana">Indiana</option>
+  <option value="Iowa">Iowa</option>
+  <option value="Kansas">Kansas</option>
+  <option value="Kentucky">Kentucky</option>
+  <option value="Louisiana">Louisiana</option>
+  
+  <option value="Maine">Maine</option>
+  <option value="Maryland">Maryland</option>
+  <option value="Massachusetts">Massachusetts</option>
+  <option value="Michigan">Michigan</option>
+  
+  
+  <option value="Minnesota">Minnesota</option>
+  <option value="Mississippi">Mississippi</option>
+  <option value="Missouri">Missouri</option>
+  <option value="Montana">Montana</option>
+  <option value="Nebraska">Nebraska</option>
+  
+  
+  <option value="Nevada">Nevada</option>
+  <option value="New-Hampshire">New Hampshire</option>
+  <option value="New-Jersey">New Jersey</option>
+  <option value="New-Mexico">New Mexico</option>
+  <option value="New-York">New York</option>
+  <option value="North-Carolina">North Carolina</option>
+  <option value="North-Dakota">North Dakota</option>
+  <option value="Ohio">Ohio</option>
+  <option value="Oklahoma">Oklahoma</option>
+  <option value="Oregon">Oregon</option>
+  <option value="Pennsylvania">Pennsylvania</option>
+  
+  
+  <option value="Rhode-Island">Rhode Island</option>
+  <option value="South-Carolina">South Carolina</option>
+  <option value="South Dakota">South Dakota</option>
+  <option value="Tennessee">Tennessee</option>
+  <option value="Texas">Texas</option>
+  <option value="Utah">Utah</option>
+  
+  
+  <option value="Vermont">Vermont</option>
+  <option value="Virginia">Virginia</option>
+  <option value="Washington">Washington</option>
+  <option value="West-Virginia">West Virginia</option>
+  <option value="Wisconsin">Wisconsin</option>
+  <option value="Wyoming">Wyoming</option>
+</select>
+
+<br>   
+<br>
+
+
+<input type="text" name="f1-zip-code" placeholder="Zip Code ..." class="f1-zip-code form-control" id="f1-zipcode" required>
+                       <br>     
+
+   <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next" id="next3">Next</button>
+                                </div>
+                                </div>
+                            </fieldset>
+
+
+
+                            <fieldset>
+                                <h4>Details Entered :</h4>
+                                <div class="form-group">
+                                <br>
+                          <span style="color:black;">First Name:
+                          </span><span id="f1-firstName" style="color:black;margin-left:15px;"></span> 
+                          
+                          
+                          
+                           
+                          
+                          <br>
+                          <br>
+                           <span style="color:black;">Last Name:
+                          </span><span id="f1-lastName" style="color:black;margin-left:15px;"></span> 
+                           <br>
+                          <br>
+                           <span style="color:black;">Phone Number:
+                          </span><span id="f1-phoneNumber" style="color:black;margin-left:15px;"></span> 
+                           <br>
+                          <br>
+                          
+                          
+                            <span style="color:black;">Email:
+                          </span><span id="f1-mail" style="color:black;margin-left:15px;"></span> 
+                        
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;">Password:
+                          </span><span id="f1-Password" style="color:black;margin-left:15px;"></span> 
+                          
+                          
+                          <br>
+                          <br>
+                          
+                           <span style="color:black;">Address:
+                          </span><span id="f1-Address" style="color:black;margin-left:15px;"></span> 
+                          
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;">State:
+                          </span><span id="f1-state" style="color:black;margin-left:15px;"></span> 
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;">Zip Code:
+                          </span><span id="f1-zipCode" style="color:black;margin-left:15px;"></span> 
+                          
+                                </div>
+                             
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-submit" id="button3">Submit</button>
+                                </div>
+                            </fieldset>
+                    	
+                    	</form>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+
+    
+        <div id="successModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content"  style="background-color:white;color:black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Transaction successfull with Txid</h4>
+                </div>
+                <div class="modal-body">
+                  <p id="txId">.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+
+
+          <div id="waitingModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content"  style="background-color:white;color:black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Processing Request ...</h4>
+                </div>
+                <div class="modal-body" style="margin-left:40%;">
+                 <img src="assets/img/loading.gif" height="100px;"width="100px;"></img>
+                </div>
+                
+              </div>
+          
+            </div>
+          </div>
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets4/js/jquery-1.11.1.min.js"></script>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+        <script src="assets4/js/jquery.backstretch.min.js"></script>
+        <script src="assets4/js/retina-1.1.0.min.js"></script>
+        <script src="assets4/js/scripts.js"></script>
+	<script src="assets/js/RegisterCustomer2Post.js"></script>
+</body>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#wrongNo").hide();
+	 $("#next1").hide();
+	 $("#wrongPass").hide();
+	 $("#next2").hide();
+	 $("#next3").hide();
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	 document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+
+</html>

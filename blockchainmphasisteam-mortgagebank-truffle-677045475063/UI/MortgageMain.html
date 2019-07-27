@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage And Refinance </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Mortgage.css">
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+
+<script src="assets/jquery-3.2.1.min.js"></script>
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-bank" id="bank_icon"></i><span id="bankName"> DB Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#">Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="#"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Login</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+ 
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+     <div class="container-fluid"  style="margin-top:10px;margin-left:25px;color:#120d7c;">
+     <h1>Mortgage and Refinance secured with Blockchain !</h1>
+     </div>
+    <div class="container-fluid" id="main_container" style="margin-top:15px;">
+        <div class="row">
+        
+        
+            
+  <img  src="assets/img/mortgage1.jpg"   width="1200" height="300"> 
+                
+                </div>
+            
+           
+            
+    </div>
+    <!--  
+    Second Section -->
+    
+    
+    <div class="container-fluid" id="main_container" style="margin-top:15px;">
+     <h1 style="color:black;">Thinking of a Mortgage but tired of the hassle?</h1>
+        <div class="row">
+        <div class="col-lg-6 col-md-12" id="apply_loan_column" >
+            <h2 style="color:#120d7c;margin-top:60px;">Prequalify For Mortgage </h2>
+                
+       <p style="color:black;margin-top:50px;font-family: Arial, Helvetica, sans-serif;font-size:18px;">Mortgage Solutions Made Simpler and Secure.Expirience hassle free banking at it's Best.Get Started with your Mortgage Application by clicking on prequalify. </p>
+            <br>
+                <button class="button " id="prequalify">PreQualify</button>
+                </div>
+                
+                
+                <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="fa fa-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <!--<form role="form" action="LoginServlet">-->
+          <form role="form" action="">
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="psw" name="password" placeholder="Enter password">
+            </div>
+            
+              <button style="background-color: #E91E63" type="submit" class="btn btn-success btn-block" id="login"><span class="fa fa-power-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button style="background:#E91E63;" type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="fa fa-wondow-close"></span> Cancel</button>
+          <p style="color:black;">Not a member? <a href="CustomerRegistration.html" style="color:blue;">Sign Up</a></p>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+                
+                <div class="col-lg-6 col-md-12" id="apply_loan_column" >
+                
+<img  src="assets/img/2.jpg"   height="300" width="585" style="margin-top:60px;">                 
+        
+            
+                
+                </div>
+            
+           
+</div>            
+    </div>
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/LoginServlet.js"></script>
+</body>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	 document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,12 @@
+ipfs:
+    container_name: ipfs
+    image: ipfs/go-ipfs 
+    ports:
+#      - 0.0.0.0:5001:8090
+#      - 127.0.0.1:4001:4001
+      - 127.0.0.1:5001:5001
+      - 0.0.0.0:8080:8080
+      - 127.0.0.1:4001:4001
+#    network_mode: "host"
+    volumes:
+      - /var/lib/docker/volumes/ipfsdata:/data/ipfs

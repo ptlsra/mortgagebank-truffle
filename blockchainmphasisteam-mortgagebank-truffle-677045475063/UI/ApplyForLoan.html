@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply For Loan </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerReg.css">
+    <link rel="stylesheet" href="assets5/css/form-elements.css">
+        <link rel="stylesheet" href="assets5/css/style.css">
+                <script src="https://www.w3schools.com/lib/w3.js"></script> 
+        
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+
+<script src="assets/jquery-3.2.1.min.js"></script>
+</head>
+
+<body id="main_body">
+<nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="BankAdmin.html"><i class="fa fa-bank" style="color:white;" id="bank_icon"></i><span id="bankName" style="color:white;"> ABC Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();" style="color:white;">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();" style="color:white;">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" style="color:white;" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" style="color:white;" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#" style="color:white;" >Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="LogOut.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Logout</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+	
+   
+   
+     
+    
+    <!--  
+    Banner -->
+    
+    
+   <div class="imagebanner">
+  <img src="assets/img/homeloan.jpg"  style="width:100%;">
+  <div class="content">
+    <h1>Apply For Loan</h1>
+    <p>Fill in details and get started.</p>
+  </div>
+</div>
+
+
+
+
+
+     <div class="top-content">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                      
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+                    	<form role="form" action="" method="post" class="f1">
+
+                    		<h3>Apply For Loan</h3>
+                    		<p></p>
+                    		<div class="f1-steps">
+                    			<div class="f1-progress">
+                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    			</div>
+                    			<div class="f1-step active">
+                    				<div class="f1-step-icon"><i class="fa fa-user" style="margin-left:13px;"></i></div>
+                    				<p>About</p>
+                    			</div>
+                    			<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-briefcase" style="margin-left:13px;"></i></div>
+                    				<p>Loan</p>
+                    			</div>
+                    		    <div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-map" style="margin-left:13px;"></i></div>
+                    				<p>Property</p>
+                    			</div>
+
+<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-check" style="margin-left:13px;"></i></div>
+                    				<p>Details</p>
+                    			</div>
+                    		</div>
+                    		
+                    		<fieldset>
+                    		    <h4>Personal Information:</h4>
+                    		    <br>
+                    			
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-last-name">Name</label>
+                                    <input type="text" name="f1-name" placeholder="Last name..." class="f1-last-name form-control" id="f1-name">
+                                </div>
+                                
+                                
+                                 <div class="form-group">
+                                    <label class="sr-only" for="f1-email">Email</label>
+                                    <input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
+                                </div>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" id="nextbutton1" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <h4>Enter Loan Details:</h4>
+                                <br>
+                                <div class="form-group">
+                                    <label  for="f1-email" style="color:black;">Loan Purpose :</label>
+ <select name="loanPurpose" id="loanPurpose" style="color:black;background: transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;cursor:pointer;margin-left:20px;width:300px;">
+  <option value="nil" selected="selected">Select a Loan Purpose</option>
+  <option value="Purchase">Purchase</option>
+  <option value="Refinance">Refinance</option>
+  </select>
+
+                                </div>
+                                <br>
+                                
+                                
+                                
+                                <div class="form-group">
+                                  <label  for="f1-email" style="color:black;">Loan Type :</label>
+ <select name="loanType" id="loanType" style="color:black;background: transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;cursor:pointer;margin-left:40px;width:300px;">
+  <option value="nil" selected="selected">Select a Loan Type</option>
+  <option value="Conventional">Conventional</option>
+  <option value="FHA">FHA</option>
+  <option value="USDA-RHS">USDA/RHS</option>
+  <option value="VA">VA</option>
+  </select>
+                               
+                                </div>
+                                
+                                 <br>
+                                
+                                <div class="form-group">
+                                   
+                                   
+                                    <label  for="f1-intersetType" style="color:black;">Interest Type :</label>
+ <select name="interestType" id="interestType" style="color:black;background: transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;cursor:pointer;margin-left:20px;width:300px;">
+  <option value="nil" selected="selected">Select a Interest Type</option>
+  <option value="Fixed">Fixed</option>
+  <option value="ARM">ARM</option>
+  
+  </select>
+                               
+                                </div>
+                                 <br>
+                                
+                                 <div class="form-group">
+                                   
+                                   
+                                    <label  for="f1-loanTerm" style="color:black;">Loan Term  :</label>
+ <select name="loanTerm" id="loanTerm" style="color:black;background: transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;cursor:pointer;margin-left:40px;width:300px;">
+  <option value="nil" selected="selected">Select a Loan Term</option>
+  <option value="15">15 years</option>
+  <option value="30">30 years</option>
+  
+  </select>
+                               
+                                </div>
+                                 <br>
+                                
+                                <div class="form-group">
+                                <label  for="f1-loanTerm" style="color:black;">Purchase Price/ Remaining Loan :</label>
+                                    <input type="text" name="f1-purchase-price" placeholder="Purchase Price/ Remaining Loan" class="f1-last-name form-control" id="f1-purchase-price">
+                                
+                                </div>
+                                
+                                
+                                <br>
+                                
+                                <div class="form-group">
+                                <label  for="f1-loanTerm" style="color:black;">Down Payment :</label>
+                                    <input type="text" name="f1-down-payment" placeholder="Down Payment" class="f1-down-payment form-control" id="f1-down-payment">
+                                
+                                </div>
+                                <br>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next" id="next2">Next</button>
+                                </div>
+                            </fieldset>
+
+
+
+
+ <fieldset>
+                                <h4>Property Details:</h4>
+                                <br>
+                               
+                                <div class="form-group">
+                                   
+                                   
+                                    <label  for="f1-loanTerm" style="color:black;">Property Type :</label>
+ <select name="propertyType" id="propertyType" style="color:black;background: transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;cursor:pointer;margin-left:40px;width:300px;">
+  <option value="nil" selected="selected">Select a Property Type</option>
+  <option value="Primary">Primary</option>
+  <option value="Secondary">Secondary</option>
+  
+  </select>
+                       
+    
+
+<br>
+<br>
+
+ <label  for="f1-loanTerm" style="color:black;">Property Address :</label>
+<input type="text" name="f1-property-address" placeholder="Property Address ..." class="f1-property-address form-control" id="f1-property-address" required>
+                       <br>     
+
+   <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next" id="next3">Next</button>
+                                </div>
+                                </div>
+                            </fieldset>
+
+
+
+                            <fieldset >
+                                <h4>Details Entered :</h4>
+                                <div class="form-group">
+                                <br>
+                          
+                           <span style="color:black;padding:20px;"> Name:
+                          </span><span id="f1-Name" style="color:black;margin-left:87px;"></span> 
+                           <br>
+                          <br>
+                          
+                          
+                          
+                            <span style="color:black;padding:20px;">Email:
+                          </span><span id="f1-mail" style="color:black;margin-left:87px;"></span> 
+                        
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Loan Purpose:
+                          </span><span id="f1-loanPurpose" style="color:black;margin-left:37px;"></span> 
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Loan Type:
+                          </span><span id="f1-loanType" style="color:black;margin-left:60px;"></span> 
+                          
+                          
+                          <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Interest Type:
+                          </span><span id="f1-interestType" style="color:black;margin-left:40px;"></span> 
+                          
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Loan Term:
+                          </span><span id="f1-loanTerm" style="color:black;margin-left:59px;"></span> 
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Purchase Price:
+                          </span><span id="f1-PurchasePrice" style="color:black;margin-left:30px;"></span> 
+                          
+                           <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Down Payment:
+                          </span><span id="f1-downPayment" style="color:black;margin-left:28px;"></span> 
+                          
+                            <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Property Type:
+                          </span><span id="f1-propertyType" style="color:black;margin-left:34px;"></span> 
+                          
+                          <br>
+                          <br>
+                          
+                           <span style="color:black;padding:20px;">Property Address:
+                          </span><span id="f1-propertyAddress" style="color:black;margin-left:15px;"></span> 
+                          
+                         
+                          
+                                </div>
+                             
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-submit" id="regButtonSubmit">Submit</button>
+                                </div>
+                            </fieldset>
+                    	
+                    	</form>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    
+    
+
+
+<div id="successModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content"  style="background-color:white;color:black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Transaction successfull with Txid</h4>
+                </div>
+                <div class="modal-body">
+                  <p id="txId">.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+
+ <div id="waitingModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content"  style="background-color:white;color:black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Processing Request ...</h4>
+                </div>
+                <div class="modal-body" style="margin-left:40%;">
+                 <img src="assets/img/loading.gif" height="100px;"width="100px;"></img>
+                </div>
+                
+              </div>
+          
+            </div>
+          </div>
+
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+    <script>
+w3.includeHTML();
+</script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+        <script src="assets5/js/jquery.backstretch.min.js"></script>
+        <script src="assets5/js/retina-1.1.0.min.js"></script>
+        <script src="assets5/js/scripts.js"></script>
+	<script src="assets/js/CreateCustomerPortfolioPost.js"></script>
+</body>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#wrongNo").hide();
+	 $("#next1").hide();
+	 $("#wrongPass").hide();
+	 $("#next2").hide();
+	 $("#next3").hide();
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	// document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+var Name=localStorage.getItem("Name");
+var email=localStorage.getItem("email");
+
+$("#f1-name").val(Name);
+$("#f1-email").val(email);
+
+
+$("#f1-name").prop("readonly", true);
+$("#f1-email").prop("readonly", true);
+
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+
+</html>

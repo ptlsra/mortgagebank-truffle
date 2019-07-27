@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Transactions History For a Loan </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerDashboard.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+<script src="assets/jquery-3.2.1.min.js"></script>
+      
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+  <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">  -->
+    
+
+<link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>  -->
+
+<script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+
+     
+     <script src="assets/js/txForALoanBank.js"></script>
+      
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+</head>
+
+<body id="main_body">
+   <div w3-include-html="commonHeader.html"></div> 
+   
+ 
+   
+   
+     
+    <div class="imagebanner">
+  <img src="assets/img/bankBanner.jpg" alt="Notebook" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To ABC Bank.</h1>
+    <p>Mortgage Solutions implemented on blockchain.</p>
+  </div>
+</div>
+ 
+
+    <!--  
+    Second Section -->
+                    <button class="buttonLink" onclick="goBack()" style="margin-left:900px;margin-top:40px;">Go Back</button>
+    
+    
+     <div class="container-fluid" id="main_container" style="margin-top:20px;width:850px;">
+        
+
+ <h2 style="color:#120d7c;text-align:left;" id="headTitle">All Transactions For Customer</h2>
+ <br>
+  <table class="table-fill" id="pendingRequestTx" style="color:black;border:1px solid;">
+  
+  </table>
+   
+  
+    </div>
+    
+    
+    
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+  
+</body>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	// document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+    var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var loanId = getUrlParameter('loanId');
+document.getElementById("headTitle").innerHTML = "All Transactions For Loan ID :"+loanId;
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+
+$("#applyForLoan").click(function(){
+    window.location.href="ApplyForLoan.html";
+}); 
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+
+
+</html>

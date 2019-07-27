@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Quote Request </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerDashboard.css">
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+      <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+<!--   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">  -->
+    <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>  -->
+   <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+         <script src="https://www.w3schools.com/lib/w3.js"></script> 
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+</head>
+
+<body id="main_body">
+    
+   
+           <div w3-include-html="commonHeader.html"></div> 
+   
+ 
+   
+     
+   <div class="imagebanner">
+  <img src="assets/img/family.jpg" style="width:100%;">
+  <div class="content">
+    <h1 id="customerNameTitle">Welcome To Customer Dashboard.</h1>
+    <p id="ll">View Quotes For LoanID</p>
+  </div>
+</div>
+
+    <!--  
+    Second Section -->
+            <button class="buttonLink" onclick="goBack()" style="margin-left:890px;margin-top:40px;">Go Back</button>
+    
+    
+    
+      
+     <div class="container-fluid" id="main_container" style="margin-top:10px;width:850px;">
+        
+
+ <h2 style="color:#120d7c;text-align:left;">All Transactions For Customer</h2>
+ <br>
+  <table class="table-fill" id="pendingRequest6" style="color:black;border:1px solid;">
+  
+  </table>
+   
+  
+    </div>
+    
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+  
+</body>
+<script>
+w3.includeHTML();
+</script>
+     <script src="assets/js/Properties.js"></script>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#infoTable").hide();
+	 $("#loanData").hide();
+	 $("#ownerAddress").hide();
+	 $("#username").hide();
+	 $("#password").hide();
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	// document.getElementById("bankName").innerHTML = "ABC Bank";
+
+	 
+	 
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+
+
+
+
+$("#applyForLoan").click(function(){
+    window.location.href="ApplyForLoan.html";
+}); 
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+var walletAddress=localStorage.getItem("walletAddress");
+
+var ipAddress=ipAdd();
+var port=portNo();
+var ipfs=ipfsPortNo();
+//alert(ipAddress);
+
+
+localStorage.setItem("ipAddress", ipAddress);
+localStorage.setItem("port", port);
+localStorage.setItem("port2", ipfs);
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var loanId = getUrlParameter('loanId');
+var name = getUrlParameter('name');
+
+var replaced = name.split('_').join(' ');
+document.getElementById("customerNameTitle").innerHTML ="Welcome To Customer Dashboard,"+ replaced;
+
+
+
+document.getElementById("ll").innerHTML ="View Quote Requests For Loan ID: "+ loanId;
+var arrayOfAddress=new Array();
+var arrayOfPolicy=new Array();
+var tempLists=[];
+var dataSets=[];
+/*
+var ipAddress= localStorage.getItem("ipAddress");
+var port= localStorage.getItem("port");
+var port2= localStorage.getItem("port2");
+
+*/
+
+$.get("http://"+ipAddress+":"+port+"/getInsuranceCompanies", function(response2){
+
+	
+	// alert(JSON.stringify(response2[0]));
+	
+	var insCompany1=response2[0].accountAddress;
+	var insCompany2=response2[1].accountAddress;
+	
+	//var flagArray=new Array();
+	var flagArray=new Array();
+	var flagArray2=new Array();
+	var flag1="unset";
+	var flag2="unset";
+	
+	
+	/*
+	$.get("http://172.21.80.81:5000/getCustomerPolicyByLoanId?loanId="+loanId+"&insuranceAddress="+insCompany1, function(response3){
+    	//  alert(JSON.stringify(response3));
+ 			$.each(response3.message, function(i, item) {
+
+ 				if(item.status=="pending_ins_approval"){
+
+ 	 				tempLists.push(item.loanId,'Insurance Approval Pending',item.policyId,'XYZ insurance','<a  href=QuoteDetailsRequest.html?loanId='+loanId+'&policyId='+item.policyId+'&insuranceAddress='+insCompany1+'&name='+name+'> View Details');
+
+ 					dataSets.push(tempLists);
+ 					tempLists=[];
+ 	 				}
+ 				
+ 				if(item.status=="quote_approved_customer"){
+ 					
+	 				tempLists.push(item.loanId,'Update Property Details',item.policyId,'XYZ insurance','<a  href=UpdatePropertyDetails.html?loanId='+loanId+'&policyId='+item.policyId+'&insuranceAddress='+insCompany1+'&name='+name+'> View Details');
+
+					dataSets.push(tempLists);
+					tempLists=[];
+	 				}
+ 				
+				if(item.status=="quote_approved_ins"){
+
+	 				tempLists.push(item.loanId,'Quote Approved',item.policyId,'XYZ insurance','<a  href=QuoteDetails.html?loanId='+loanId+'&policyId='+item.policyId+'&insuranceAddress='+insCompany+'&name='+name+'> View Details');
+
+					dataSets.push(tempLists);
+					tempLists=[];
+	 				}
+ 			
+ 			
+ 			});
+	});*/
+	
+	
+	
+	/*
+	$.get("http://172.21.80.81:5000/getCustomerPolicyByLoanId?loanId="+loanId+"&insuranceAddress="+insCompany2, function(response4){
+    	//  alert(JSON.stringify(response4));
+ 		
+    	
+    	$.each(response4.message, function(i, item) {
+    		if(item.status=="quote_approved_customer"){
+					
+ 				tempLists.push(item.loanId,'Update Property Details',item.policyId,'LPV insurance','<a  href=UpdatePropertyDetails.html?loanId='+loanId+'&policyId='+item.policyId+'&insuranceAddress='+insCompany2+'&name='+name+'> View Details');
+
+				dataSets.push(tempLists);
+				tempLists=[];
+ 				}
+				
+ 				
+ 				if(item.status=="quote_approved_ins"){
+
+ 				tempLists.push(item.loanId,item.status,item.policyId,'LPV insurance','<a  href=QuoteDetails.html?loanId='+loanId+'&policyId='+item.policyId+'&insuranceAddress='+insCompany2+'&name='+name+'> View Details');
+
+				dataSets.push(tempLists);
+				tempLists=[];
+ 				}
+ 				if(item.status=="pending_ins_approval"){
+
+ 	 				tempLists.push(item.loanId,'Approval Pending',item.policyId,'LPV insurance','<a  href=QuoteDetails.html?loanId='+loanId+'&policyId='+item.policyId+'&insuranceAddress='+insCompany2+'&name='+name+'> View Details');
+
+ 					dataSets.push(tempLists);
+ 					tempLists=[];
+ 	 				}
+				
+ 			});
+ 			//alert(dataSets);
+	});*/
+	
+	
+	$.get("http://"+ipAddress+":"+port+"/getQuotes?loanId="+loanId, function(response3){
+    	// alert(JSON.stringify(response3));
+ 			$.each(response3.jsonResponse, function(i, item) {
+ 				
+ 				if(item.quote=='pending'){
+ 					if(item.companyAddress==insCompany1){
+ 	 					
+ 	 				
+ 					tempLists.push(loanId,'Insurance Approval Pending','Chain insurance','<a  href=QuoteDetailsPending.html?loanId='+loanId+'&policyId='+loanId+'&insuranceAddress='+insCompany1+'&name='+loanId+'> View Details');
+
+ 					dataSets.push(tempLists);
+ 					tempLists=[];
+ 					
+ 				}
+ 					if(item.companyAddress==insCompany2){
+ 	 					
+ 	 	 				
+ 	 					tempLists.push(loanId,'Insurance Approval Pending','Block insurance','<a  href=QuoteDetailsPending.html?loanId='+loanId+'&policyId='+loanId+'&insuranceAddress='+insCompany2+'&name='+loanId+'> View Details');
+
+ 	 					dataSets.push(tempLists);
+ 	 					tempLists=[];
+ 	 					
+ 	 				}
+ 				}
+ 				
+ 			});
+	
+	
+ 			$('#pendingRequest6').DataTable( {
+ 				data: dataSets,
+ 				columns: [
+ 					 { title: "Loan ID" },
+ 				    { title: "Status Of Loan" },
+ 			//	    { title: " Request ID " },
+ 				   { title: " From " },
+ 				    {title: "Details  "}
+ 				    
+ 				    
+ 				    
+ 				    
+
+ 				  
+ 				]
+ 	    		} );
+
+	
+	
+	});
+});
+
+});
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Identity Documents </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerDashboard.css">
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+      <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+<!--   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>  -->
+<script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+
+     <script src="https://www.w3schools.com/lib/w3.js"></script> 
+   
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   
+</head>
+
+<body id="main_body">
+   
+   
+   
+   
+     <!--  
+    Header -->
+   
+        <div w3-include-html="commonHeader.html"></div> 
+   
+   
+     
+   <div class="imagebanner">
+  <img src="assets/img/family.jpg" style="width:100%;">
+  <div class="content">
+    <h1 id="CustNameIntro">Welcome To Customer Dashboard.</h1>
+    <p>Upload Identity Documents To process Loan</p>
+  </div>
+</div>
+
+    <!--  
+    Second Section -->
+                <button class="buttonLink" onclick="goBack()" style="margin-left:890px;margin-top:40px;">Go Back</button>
+    
+    
+     <div class="container-fluid" id="main_container" style="margin-top:20px;width:850px;">
+        
+
+ <button class="button" style="width:800px;"id="loanDetailButton"> Loan Details</button>
+ 
+ 
+   <table class="table table-bordered" style="color:black; margin-top:20px;width:780px;margin-left:20px;" id="infoTable">
+   
+  
+      <tr>
+        <td>Loan ID</td>
+        <td id="loanId" style="font-weight:bold;"></td>
+        <td>Loan Purpose</td>
+        <td id="loanPurpose" style="font-weight:bold;"></td>
+        
+        <td>Loan Type</td>
+        <td id="loanType" style="font-weight:bold;"></td>
+        
+        
+        
+       
+      </tr>
+      
+      <tr>
+        <td>Interest Type</td>
+        <td id="interestType" style="font-weight:bold;"></td>
+        <td>Loan Term</td>
+        <td id="loanTerm" style="font-weight:bold;"></td>
+        
+        <td>Purchase Price</td>
+        <td id="purchasePrice" style="font-weight:bold;"></td>
+      
+      </tr>
+     
+      <tr>
+      
+         <td>Down Payment</td>
+        <td id="downPayment" style="font-weight:bold;"></td>
+        <td>Property Type</td>
+        <td id="propertyType" style="font-weight:bold;"></td>
+        
+        <td>Property Address</td>
+        <td id="propertyAddress" style="font-weight:bold;"></td>
+       
+      </tr>
+   
+  </table>
+ 
+  <button class="button" style="width:800px;margin-top:30px;"id="UploadIdentityDocuments">Identity Documents</button>
+ 
+ 
+ 
+
+  
+  
+  
+  
+  <form  id='uploadForm' action='http://54.213.12.204:5000/uploadIdentityDocuments' method='post' encType="multipart/form-data" >
+     <table style="color:black;margin-top:20px;width:730px;margin-left:50px;" class="table table-bordered">
+     <th>SNo.</th>
+     <th>Name Of Document</th>
+     <th>Tag</th>
+     <th>Upload</th>
+     
+   
+
+             
+            
+     <tr>
+     <td>1</td>
+     <td>SSN </td>
+      <td>SSN</td>
+       <td><input type="file" name="ssn" id="ssn"/></td>
+     </tr>
+     
+      <tr>
+     <td>2</td>
+     <td>Passport </td>
+      <td>Passport</td>
+       <td><input type="file" name="passport" /></td>
+     </tr>
+     
+     
+  
+     
+      </table>   
+     
+
+
+
+  <input type="text" name="loanId" id="loanData" />
+     <input type="text" name="ownerAddress" id="ownerAddress" />
+       <input type="text" name="username" id="username" />
+       <input type="text" name="password" id="password" />
+     
+     
+
+        <input type='submit' class="button" value='Upload Documents' style="width:750px;" id="button3"  />
+        
+    </form>  
+    </div>
+    
+    
+    
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+  
+</body>
+<script>
+w3.includeHTML();
+</script>
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#infoTable").hide();
+	 $("#uploadForm").hide();
+	 $("#loanData").hide();
+	 $("#ownerAddress").hide();
+	 $("#username").hide();
+	 $("#password").hide();
+	 
+	 
+	 
+	 
+	 
+	 $("#loanDetailButton").click(function(){
+		    $("#infoTable").show();
+		});
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	// document.getElementById("bankName").innerHTML = "ABC Bank";
+	 
+	// CustNameIntro
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+$("#UploadIdentityDocuments").click(function(){
+	 $("#uploadForm").show();
+});
+
+
+
+
+
+$("#applyForLoan").click(function(){
+    window.location.href="ApplyForLoan.html";
+}); 
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+var walletAddress=localStorage.getItem("walletAddress");
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var loanId = getUrlParameter('loanId');
+var CustName = getUrlParameter('name');
+
+var replaced = CustName.split('_').join(' ');
+
+
+document.getElementById("CustNameIntro").innerHTML = "Welcome To Customer Dashboard,"+replaced;
+
+
+var ipAddress= localStorage.getItem("ipAddress");
+var port= localStorage.getItem("port");
+var port2= localStorage.getItem("port2");
+
+$.get("http://"+ipAddress+":"+port+"/getPortfolio?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+	  // alert(JSON.stringify(response.people));
+	//alert(JSON.stringify(response));
+	
+	 document.getElementById("loanId").innerHTML = response.message.loanId;
+	 document.getElementById("loanPurpose").innerHTML = response.message.loanPurpose;
+	 document.getElementById("loanType").innerHTML = response.message.loanType;
+	 document.getElementById("interestType").innerHTML = response.message.interestType;
+	 document.getElementById("loanTerm").innerHTML = response.message.loanTerm+" years";
+	 document.getElementById("purchasePrice").innerHTML = "$ "+response.message.purchasePrice;
+	 
+	 document.getElementById("downPayment").innerHTML = "$ "+response.message.downPayment;
+	 document.getElementById("propertyType").innerHTML = response.message.propertyType;
+	 var ppAdd=response.message.propertyAddress;
+	 var ppAdd2=ppAdd.charAt(0).toUpperCase() + ppAdd.slice(1);
+	 var replaced2 = ppAdd2.split('_').join(' ');
+	 document.getElementById("propertyAddress").innerHTML = replaced2;
+	 
+	 
+	 $("#loanData").val(loanId);
+	 $("#ownerAddress").val(walletAddress);
+	 
+	 
+	 var password=localStorage.getItem("password");
+	 var email=localStorage.getItem("email");
+	 
+	 $("#username").val(email);
+	 $("#password").val(password);
+	 
+	 
+	 
+	
+
+
+});
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+
+
+</html>

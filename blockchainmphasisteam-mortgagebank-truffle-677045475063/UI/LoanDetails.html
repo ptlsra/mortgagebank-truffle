@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Details </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/MainLogin.css">
+      <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+
+<script src="assets/jquery-3.2.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+     <script src="https://www.w3schools.com/lib/w3.js"></script> 
+    
+    
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+</head>
+
+<body id="main_body">
+   
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+   
+ 
+        <!--  
+    Header -->
+   
+<nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="BankAdmin.html"><i class="fa fa-bank" style="color:white;" id="bank_icon"></i><span id="bankName" style="color:white;"> ABC Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();" style="color:white;">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();" style="color:white;">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" style="color:white;" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" style="color:white;" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#" style="color:white;" >Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="LogOut.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Logout</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+	
+   
+     
+   <div class="imagebanner">
+  <img src="assets/img/bankBanner.jpg" alt="Bank" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To ABC Bank.</h1>
+    <p id="titleCustName">Mortgage Solutions implemented on blockchain.</p>
+  </div>
+</div>
+    <div class="container-fluid" id="main_container" >
+        <div class="row">
+        
+                <button class="buttonLink" onclick="goBack()" style="margin-left:400px;margin-top:40px;">Go Back</button>
+        
+         
+          <h3 style="color:black;text-align:left;margin-left:200px;">Current Status</h3>
+ <table class="table table-bordered" style="color:black; margin-top:20px;width:780px;margin-left:200px;" id="infoTable2">
+   
+  
+      <tr>
+        <td>Loan Status</td>
+        <td id="loanStatus" style="font-weight:bold;">New Request</td>
+        <td>Current Action</td>
+        <td id="currentAction" style="font-weight:bold;"> Pending Approval</td>
+        
+       
+        
+        
+       
+      </tr>
+      
+      </table>
+   <div class="col-lg-6 col-md-12 card" id="apply_loan_column" style="margin-top:10px;margin-left:390px;width:450px;">
+         <div class="titleLanding" id="titleText" style="margin-top:10px;">Log In As Admin</div>
+   <!--<form role="form"   method="post" action="InitialLoanApproval2" id="form1" >-->
+   <form role="form"   method="post" action="" id="form1" >
+           
+           
+            
+     <br>
+     <br>
+      <p  style="color:black;margin-left:2px;text-align:left;">Loan Purpose </p>
+<input type="text" class="form-control" id="loanPurpose2" name="loanPurpose" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+           
+            
+             <p  style="color:black;margin-left:2px;text-align:left;">Loan Type </p>
+<input type="text" class="form-control" id="loanType" name="loanType" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Interest Type </p>
+<input type="text" class="form-control" id="interestType" name="interestType" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Loan Term </p>
+<input type="text" class="form-control" id="loanTerm" name="loanTerm" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Purchase Price (in dollars) </p>
+<input type="text" class="form-control" id="purchasePrice" name="purchasePrice" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Down Payment(in dollars) </p>
+<input type="text" class="form-control" id="downPayment" name="downPayment" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Type </p>
+<input type="text" class="form-control" id="propertyType" name="propertyType" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Address </p>
+<input type="text" class="form-control" id="propertyAddress" name="propertyAddress" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+
+<input type="text" class="form-control" id="loanId" name="loanId"  required>
+
+     
+          <input type="button" class="buttonReject" value="Approve & Request For Identity Documents" id="LoanApproval2">
+          <button class="buttonReject" type="button" >Reject </button>
+           </form>
+         
+          
+          
+ 
+        
+ 
+    
+              
+              
+                </div>
+            
+             
+            
+    </div>
+    </div>
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+
+
+ <div id="successModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content"  style="background-color:white;color:black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Transaction successfull with Txid</h4>
+                </div>
+                <div class="modal-body">
+                  <p id="txId">.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+
+
+          <div id="waitingModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content"  style="background-color:white;color:black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Processing Request ...</h4>
+                </div>
+                <div class="modal-body" style="margin-left:40%;">
+                 <img src="assets/img/loading.gif" height="100px;"width="100px;"></img>
+                </div>
+                
+              </div>
+          
+            </div>
+          </div>
+    
+
+
+
+
+
+</body>
+<script>
+w3.includeHTML();
+</script>
+<script src="assets/js/Properties.js"></script>
+<script src="assets/js/InitialLoanApproval2.js"></script>
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#loanId").hide();
+	 
+	
+	// inc
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	// document.getElementById("bankName").innerHTML = "ABC Bank";
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+
+
+var ipAddress=ipAdd();
+var port=portNo();
+var ipfs=ipfsPortNo();
+//alert(ipAddress);
+
+localStorage.setItem("ipAddress", ipAddress);
+	 localStorage.setItem("port", port);
+	 localStorage.setItem("port2", ipfs);
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var walletAddress = getUrlParameter('walletAddress');
+var loanId = getUrlParameter('loanId');
+var name = getUrlParameter('name');
+
+var replaced = name.split('_').join(' ');
+
+document.getElementById("titleText").innerHTML = "Loan Details For ID: "+loanId;
+document.getElementById("titleCustName").innerHTML = "Loan Details For Customer : "+replaced;
+
+
+$("#loanPurpose2").prop("readonly", true);
+$("#loanType").prop("readonly", true);
+$("#interestType").prop("readonly", true);
+
+$("#loanTerm").prop("readonly", true);
+$("#purchasePrice").prop("readonly", true);
+$("#downPayment").prop("readonly", true);
+$("#propertyType").prop("readonly", true);
+$("#propertyAddress").prop("readonly", true);
+/*
+var ipAddress= localStorage.getItem("ipAddress");
+var port= localStorage.getItem("port");
+*/
+$.get("/getPortfolio?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+	  // alert(JSON.stringify(response.people));
+	//	alert(JSON.stringify(response));
+		 $("#loanPurpose2").val(response.message.loanPurpose);
+		 $("#loanType").val(response.message.loanType);
+		 $("#interestType").val(response.message.interestType);
+		 $("#loanTerm").val(response.message.loanTerm);
+		 $("#purchasePrice").val(response.message.purchasePrice);
+		 $("#downPayment").val(response.message.downPayment);
+		 $("#propertyType").val(response.message.propertyType);
+		 $("#propertyAddress").val(response.message.propertyAddress);
+		 $("#loanId").val(response.message.loanId);
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+
+
+});
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>

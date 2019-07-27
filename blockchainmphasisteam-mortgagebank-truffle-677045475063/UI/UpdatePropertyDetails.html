@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Property </title>
+   
+ 
+       
+     
+     
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CustomerDashboard.css">
+   <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+    <script src="assets/jquery-3.2.1.min.js"></script>  
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    
+<!--   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+<!-- <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>  -->
+   
+    <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+    <style>
+
+#namanyay-search-btn {
+background:#120d7c;
+color:white;
+margin-top:19px;
+font: 'trebuchet ms', trebuchet;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+
+#namanyay-search-box {
+background: #eee;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:300px;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+ }
+</style>
+    
+   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><i class="fa fa-bank" id="bank_icon"></i><span id="bankName"> DB Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                                   <li role="presentation" id="f" style="margin-right:350px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                                                   <li role="presentation" id="e" style="margin-right:450px;"><a href="#" onclick="MyFunction();">Personal Banking</a></li>
+                
+                    <li role="presentation" id="a"><a href="#" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#">Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="LogOut.html"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Logout</a></li>
+                    
+                    <li role="presentation" style="color:white;">
+                    Search
+<input id="namanyay-search-box" name="q" size="40" type="text" />
+<button id="namanyay-search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+               </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+ 
+    <nav class="navbar navbar-default" id="nav_bar2" style="background:#f3f1f1;">
+        <div class="container-fluid" style="background:#f3f1f1;">
+            
+            <div class="collapse navbar-collapse" id="navcol-1" style="background:#f3f1f1;">
+                <ul class="nav navbar-nav navbar-left" style="font-size:14px;" >
+                              
+                
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Online & Mobile Banking </a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Checking & Savings</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Credit Cards & Prepaid Cards</a></li>
+                    <li style="margin-right:8px;" ><a href="MortgageMain.html" style="color:black;">Mortgage & Refinance</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Loans & Credit Lines</a></li>
+                    <li  style="margin-right:8px;"><a href="#" style="color:black;">Wealth Management</a></li>
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+     
+   <div class="imagebanner">
+  <img src="assets/img/family.jpg" style="width:100%;">
+  <div class="content">
+ <h1 id="CustomerIntroTitle">Welcome To Customer Dashboard.</h1>
+     <p>Update Property Details To process Insurance</p>
+  </div>
+</div>
+
+    <!--  
+    Second Section -->
+    
+    
+    <div class="container-fluid" id="main_container" >
+        <div class="row">
+        
+        
+         
+            
+   <div class="col-lg-6 col-md-12 card" id="apply_loan_column" style="margin-top:90px;margin-left:390px;width:450px;">
+         <div class="titleLanding" id="titleText" style="margin-top:10px;">Log In As Admin</div>
+   <form role="form"   method="post" action="" id="form1" >
+           
+           
+            
+     <br>
+     <br>
+  
+
+<p  style="color:black;margin-left:2px;text-align:left;">Purchase Price (in dollars):</p>
+<input type="text" class="form-control" id="purchasePrice" name="purchasePrice" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Down Payment (in dollars) :</p>
+<input type="text" class="form-control" id="downPayment" name="downPayment" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Type :</p>
+<input type="text" class="form-control" id="propertyType" name="propertyType" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Address :</p>
+<input type="text" class="form-control" id="propertyAddress" name="propertyAddress" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;" required>
+<br>
+
+
+<p  style="color:black;margin-left:2px;text-align:left;">Property Document :
+ <a href="#" id="btnShow" style="margin-left:130px;">View Document</a>
+</p>
+
+ <input type="text" class="form-control" id="propertyDoc" name="propertyDoc" style="border:1px solid #ccc;border-radius:4px;box-sizing:border-box;color:black;">
+<br>
+<br>
+
+<input type="text" class="form-control" id="loanId" name="loanId" >
+
+<input type="text" class="form-control" id="policyId" name="policyId">
+
+<input type="text" class="form-control" id="insId" name="insId">
+
+
+
+     
+          <input type="submit" class="button" id="button3" value="Update Request Details">
+           </form>
+         
+          
+          
+ 
+        
+ 
+    
+              
+              </div>
+                </div>
+            
+             
+            
+    </div>
+    
+     <div id="dialog" style="display: none;width:700px;" >
+    
+        <iframe id="frame" style="width:600px;height:400px;"></iframe>
+        
+
+</div>
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+
+<script src="assets/js/InitialLoanApprovalPost.js"></script>
+  
+</body>
+     <script src="assets/js/Properties.js"></script>
+
+
+  <script>
+$(document).ready(function(){
+	 $("#e").hide();
+	 $("#f").show();
+	 $("#nav_bar2").hide();
+	 $("#propertyDoc").hide();
+	 
+	 $("#loanData").hide();
+	 $("#ownerAddress").hide();
+	 $("#username").hide();
+	 $("#password").hide();
+	 $("#insId").hide();
+	 $("#policyId").hide();
+	 $("#loanId").hide();
+	 
+	 
+	 
+	 
+	 
+	 
+	 $("#namanyay-search-box").hide();
+	 
+	 //var bank=localStorage.getItem("banksName");
+	 document.getElementById("bankName").innerHTML = "ABC Bank";
+	 titleText
+        //$("#main_footer").hide();
+       // document.getElementById("jumbotron_header").innerHTML = "Welcome To "+"ABC Bank";
+       
+	
+
+$("#namanyay-search-btn").on('focus', function () {
+	 $("#a").hide();
+	 $("#b").hide();
+	 $("#c").hide();
+	 $("#d").hide();
+	 $("#f").hide();
+	 $("#e").show();
+	
+	 
+
+	
+	 $("#namanyay-search-box").show();
+   
+});
+
+
+
+
+
+
+$("#namanyay-search-box").on('blur', function () {
+	 $("#a").show();
+	 $("#b").show();
+	 $("#c").show();
+	 $("#d").show();
+	 $("#f").show();
+	 $("#e").hide();
+	 $("#namanyay-search-box").hide();
+
+  
+});
+var walletAddress=localStorage.getItem("walletAddress");
+
+var ipAddress=ipAdd();
+var port=portNo();
+var ipfs=ipfsPortNo();
+//alert(ipAddress);
+
+
+localStorage.setItem("ipAddress", ipAddress);
+localStorage.setItem("port", port);
+localStorage.setItem("port2", ipfs);
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+$("#propertyType").prop("readonly", true);
+$("#purchasePrice").prop("readonly", true);
+$("#downPayment").prop("readonly", true);
+$("#propertyAddress").prop("readonly", true);
+
+var name = getUrlParameter('name');
+
+var replaced = name.split('_').join(' ');
+
+document.getElementById("CustomerIntroTitle").innerHTML ="Welcome To Customer Dashboard,"+ replaced;
+
+var loanId = getUrlParameter('loanId');
+var policyId = getUrlParameter('policyId');
+var insuranceAddress = getUrlParameter('insuranceAddress');
+
+var walletAddress=localStorage.getItem('walletAddress');
+//var insuranceAddress=localStorage.getItem('insuranceAddress');
+//alert(insuranceAddress);
+$("#insId").val(insuranceAddress);
+
+
+//alert(walletAddress);
+document.getElementById("titleText").innerHTML = "Property Details for Loan ID:" +loanId;
+
+/*
+var ipAddress= localStorage.getItem("ipAddress");
+var port= localStorage.getItem("port");
+var port2= localStorage.getItem("port2");
+*/
+
+$.get("http://"+ipAddress+":"+port+"/getPortfolio?walletAddress="+walletAddress+"&loanId="+loanId, function(response){
+	  // alert(JSON.stringify(response));
+	//alert(JSON.stringify(response));
+	$("#propertyType").val(response.message.propertyType);
+	$("#purchasePrice").val(response.message.purchasePrice);
+	$("#downPayment").val(response.message.downPayment);
+	$("#propertyAddress").val(response.message.propertyAddress);
+	
+	
+	 $("#insId").val(insuranceAddress);
+	 $("#policyId").val(policyId);
+	 $("#loanId").val(loanId);
+	
+	 
+	 
+	 
+	 
+	 var password=localStorage.getItem("password");
+	 var email=localStorage.getItem("email");
+	 
+	 $("#username").val(email);
+	 $("#password").val(password);
+	 
+	 
+	 
+	
+
+
+});
+
+
+$('#btnShow').click(function(){
+	$.get("http://"+ipAddress+":"+port+"/getDocumentHashByLoanId?loanId="+loanId, function(response){
+		  // alert(JSON.stringify(response.people));
+		//alert(JSON.stringify(response));
+		
+		 
+		// document.getElementById("propertyAddress").innerHTML = response.message.propertyAddress;
+		
+	
+    $("#dialog").dialog({
+       
+            maxWidth:600,
+            maxHeight: 450,
+            width: 600,
+            height: 450,
+            modal: true
+            
+        });
+    $("#frame").attr("src", "http://"+ipAddress+":"+port2+"/ipfs/"+response.message.taxReturnsHash);
+    $("#propertyDoc").val(response.message.taxReturnsHash);
+}); 
+});
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+<script>
+function MyFunction(){
+	$("#nav_bar2").show();
+}
+
+</script>
+
+
+
+</html>
